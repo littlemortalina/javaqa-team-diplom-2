@@ -145,5 +145,13 @@ public class SavingAccountTest {
         SavingAccount account = new SavingAccount(5_000, 1_000, 5_000, 5);
         Assertions.assertEquals(5_000, account.getBalance());
     }
+
+    // Тест 20
+    @Test
+    public void ShouldThrowSavingAccountWithInitialBalanceLessMinBalance() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            new SavingAccount(15_000, 20_000, 5_000, 5);
+        });
+    }
 }
 
