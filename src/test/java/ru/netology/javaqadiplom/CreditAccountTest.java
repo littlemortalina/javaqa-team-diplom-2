@@ -39,8 +39,9 @@ public class CreditAccountTest {
     @Test
     // Проверяем, что метод ВЕРНУЛ правильное значение для отрицательного баланса
     public void shouldReturnCorrectInterestForNegativeBalance() {
-        CreditAccount account = new CreditAccount(-200, 5_000, 15);
-        Assertions.assertEquals(-30, account.yearChange());
+        CreditAccount account = new CreditAccount(200, 5_000, 15);
+        account.pay(400);
+        Assertions.assertEquals(30, account.yearChange());
     }
 
     @Test
