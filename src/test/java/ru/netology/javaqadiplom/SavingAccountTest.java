@@ -150,7 +150,7 @@ public class SavingAccountTest {
     @Test
     public void ShouldThrowSavingAccountWithInitialBalanceLessMinBalance() {
         Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            new SavingAccount(15_000, 20_000, 5_000, 5);
+            new SavingAccount(15_000, 20_000, 25_000, 5);
         });
     }
 }
